@@ -46,7 +46,15 @@ body{
     overflow: hidden;
     display: block;
 }
+
 #helper a{
     text-decoration: none;
     color: #111;
+}
+
+#expandButton{
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-Size: 6vh;
 }

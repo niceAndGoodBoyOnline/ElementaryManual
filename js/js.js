@@ -1,5 +1,3 @@
-
-
 function open_sidenav(){
     let sidenav = document.getElementById("sideNav")
     let container = document.getElementById('container');
@@ -25,4 +23,18 @@ function close_sidenav(){
     container.style.marginLeft = "7vw";
     sidenav.innerHTML = '<a href="javascript:void(0)" class="closebtn" onclick="open_sidenav()">🧭</a>'
     sidenav.style.width = "auto"
+}
+
+function expand_helper(){
+    let helper = document.getElementById('helper')
+    let expandButton = document.getElementById('expandButton')
+    helper.style.height = '66vh'
+    expandButton.onclick = function() {contract_helper()}
+}
+
+function contract_helper(){
+    let helper = document.getElementById('helper')
+    let expandButton = document.getElementById('expandButton')
+    helper.style.height = '20vh'
+    expandButton.onclick = function() {expand_helper()}
 }
