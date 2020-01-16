@@ -16,7 +16,7 @@ body{
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black */
+  background-color: rgba(20,20,20,0); 
   overflow-x: hidden; /* Disable horizontal scroll */
   padding: 1vh .5vw 1vh 0;
   display: block;
@@ -27,7 +27,7 @@ body{
 .sidenav a {
   padding: .2vw .25vw .25vw .5vw;
   text-decoration: none;
-  color: #bbb;
+  color: #111;
   display: block;
 }
 
@@ -42,11 +42,11 @@ body{
     position: fixed;
     bottom: 0;
     left: 0;
-    background-color: #111;
+    background-color: rgba(180,180,180,.8); 
     overflow: hidden;
     display: block;
 }
 #helper a{
     text-decoration: none;
-    color: #bbb;
+    color: #111;
 }
