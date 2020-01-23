@@ -1,0 +1,82 @@
+body{
+    width: 100%;
+    overflow-x:hidden;
+}
+
+#cover{
+    font-family: monospace;
+    background-color: #3892E0;
+  }
+  
+  #coverContainer{
+    text-align: center;
+  }
+  
+  .coverLinks {
+    position: relative;
+    text-decoration: none;
+    text-align: left;
+    color: white;
+  }
+  
+  .coverLinks a{
+    display: block;
+  }
+  
+  #cover img{
+    position:relative;
+    float: right;
+  }
+  
+  .leftLink{
+    text-align: left;
+    float: left;
+  }
+  
+  .rightLink{
+    text-align: right;
+    float: right;
+  }
+
+@media screen and(orientation: portrait){
+
+  #cover{
+    font-size: 3vh;
+  }
+  
+  .coverLinks {
+    left: 12vw;
+    font-size: 2vh;
+  }
+  
+  .coverLinks a{
+    padding: .2vh 0 .2vh;
+  }
+  
+  #cover img{
+    width: auto;
+    height: 20%;
+  }
+}
+
+@media screen and (orientation: landscape){
+
+  #cover{
+    font-size: 10vh;
+  }
+
+  #cover img{
+    right: 10vw;
+    width: auto;
+    height: 50%;
+  }
+  
+  .coverLinks {
+    left: 6vw;
+    font-size: 3vh;
+  }
+  
+  .coverLinks a{
+    padding: .2vh 0 .2vh;
+  }
+}

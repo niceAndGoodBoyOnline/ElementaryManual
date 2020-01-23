@@ -1,60 +1,176 @@
 body{
   font-family: monospace;
-  background-color: #cde;
+  background: linear-gradient(#4A9BE2,#A4CDF0,#ACD1F1, #FFF,#FFF) fixed;
+}
+
+
+.leftLink{
+  text-align: left;
+  float: left;
+}
+
+.rightLink{
+  text-align: right;
+  float: right;
 }
 
 #container{
-  position: relative; 
-  float: left; 
-  margin-left: 7vw;
+  position: absolute; 
+  float: left;
+  border-left: .25vh solid black; 
+  margin-left: 8vh;
+  padding: 0 2vh 0 2vh;
+  height: 100%;
 }
 
-/* The sidebar menu */
-.sidenav {
-  width: auto; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
+  
+#navButton{
+  position: fixed;
+  text-decoration: none;
+  font-size: 15vh;
+  float: left;
+  left: -10vh;
+  z-index: 2;
+}
+
+#sideNav {
+  width: 0vw;
+  position: fixed;
+  z-index: 1; 
+  top: 20vh; 
   left: 0;
   background-color: rgba(20,20,20,0); 
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding: 1vh .5vw 1vh 0;
+  overflow-x: hidden;
+  padding: 1vh 0 1vh 0;
   display: block;
-  font-size: 5vw
+  font-size: 3vh;
+  transition: .18s;
+  border-top: .2vh solid black;
 }
 
-/* The navigation menu links */
-.sidenav a {
-  padding: .2vw .25vw .25vw .5vw;
+#sideNav a {
+  padding: .2vw 0vh 1vw 1vw;
   text-decoration: none;
   color: #111;
   display: block;
 }
 
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+#sideNav a:hover {
   color: #f1f1f1;
 }
   
 #helper{
-    width: 100%;
-    height: 20%;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(180,180,180,.8); 
-    overflow: hidden;
-    display: block;
+  width: 100%;
+  height: 4vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: .5vh;
+  background-color: rgba(180,180,180,.97); 
+  overflow: hidden;
+  display: block;
+  z-index: 1;
+  transition: 0.5s;
 }
 
 #helper a{
-    text-decoration: none;
-    color: #111;
+  text-decoration: none;
+  margin: 0 0 0 1vw;
+  color: #111;
 }
 
 #expandButton{
   position: absolute;
   right: 0;
-  top: 0;
-  font-Size: 6vh;
+  top: -.5vh;
+  font-Size: 5vh;
+}
+
+
+@media screen and (orientation: landscape){
+  
+  #container{
+    margin-left: 8vh;
+    padding: 0 2vh 0 2vh;
+    font-family: monospace;
+    height: 100%;
+  }
+  
+    
+  #navButton{
+    font-size: 15vh;
+    left: -10vh;
+  }
+  
+  #sideNav {
+    width: 0vw;
+    top: 20vh; 
+    left: 0;
+    padding: 1vh 0 1vh 0;
+    font-size: 2vw;
+  }
+  
+  #sideNav a {
+    padding: .2vw 0vh 3vw 1vw;
+  }
+
+  #helper{
+    width: 100%;
+    height: 4vh;
+    padding-top: .5vh;
+  }
+  
+  #helper a{
+    margin: 0 0 0 1vw;
+  }
+  
+  #expandButton{
+    top: -.5vh;
+    font-Size: 5vh;
+  }
+  
+}
+
+@media only screen and (orientation: portrait) {
+  
+  #container{
+    margin-left: 8vh;
+    padding: 0 2vh 0 2vh;
+    font-family: monospace;
+    height: 100%;
+  }
+  
+    
+  #navButton{
+    font-size: 15vh;
+    left: -10vh;
+  }
+  
+  #sideNav {
+    width: 0vw;
+    top: 20vh; 
+    left: 0;
+    padding: 1vh 0 1vh 0;
+    font-size: 2vw;
+  }
+  
+  #sideNav a {
+    padding: .2vw 0vh 3vw 1vw;
+  }
+
+  #helper{
+    width: 100%;
+    height: 4vh;
+    padding-top: .5vh;
+  }
+  
+  #helper a{
+    margin: 0 0 0 1vw;
+  }
+  
+  #expandButton{
+    top: -.5vh;
+    font-Size: 5vh;
+  }
+  
 }
