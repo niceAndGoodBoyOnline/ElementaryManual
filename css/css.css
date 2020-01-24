@@ -86,6 +86,10 @@ body{
   font-Size: 5vh;
 }
 
+.screenshots{
+  width: 50%;
+}
+
 
 @media screen and (orientation: landscape){
   
