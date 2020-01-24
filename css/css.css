@@ -86,9 +86,6 @@ body{
   font-Size: 5vh;
 }
 
-.screenshots{
-  width: 50%;
-}
 
 
 @media screen and (orientation: landscape){
@@ -131,6 +128,10 @@ body{
   #expandButton{
     top: -.5vh;
     font-Size: 5vh;
+  }
+
+  .screenshots{
+    width: 50%;
   }
   
 }
@@ -175,6 +176,10 @@ body{
   #expandButton{
     top: -.5vh;
     font-Size: 5vh;
+  }
+
+  .screenshots{
+    width: 100%;
   }
   
 }
