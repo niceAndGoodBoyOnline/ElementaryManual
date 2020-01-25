@@ -10,7 +10,7 @@
     <a href="javascript:void(0)" id="navButton">🧭</a>
 
     <div id='container'>
-        <div><h1>How to Make a Bootable USB drive</h1></div>
+        <div><h1>How to Make a <span>Bootable</span> USB drive</h1></div>
         <br>
         <div>
 
@@ -33,7 +33,7 @@
                 <li>Click on the <strong>Download</strong> button.</li><br>
             </ol>
 
-            <h2>Flashing the USB drive:</h2>
+            <h2>Formatting the USB drive:</h2>
 
             <ol>
                 <li>Double click the rufus.exe file that we downloaded in step 1.(It should be in your Downloads folder.)</li><br>
@@ -44,7 +44,7 @@
                 <li>Browse through your files to find the Elementary OS ISO that we downloaded earlier. (This should also be in your Downloads folder.)</li><br>
                 <img src="../img/ISO_selector_dialog_box.png" alt="ISOSelectorDialogBox" class="screenshots"><br>
                 <li>Click <strong>Start</strong>.</li><br>
-                <img src="../img/rufus_start.png" alt="rufusStart" class="screenshots"><br>
+                <img src="../img/rufus_start.png" alt="rufusStart" class="screenshots"><br><br>
                 <li>If any of the following dialog boxes show up, click on the respective buttons marked by the red arrow.</li><br>
                 <img src="../img/rufus_warning.png" alt="rufusWarning" class="screenshots"><br>
                 <li>A green 'Ready' bar indicates the process has been completed.</li><br>
@@ -71,8 +71,8 @@
 
     <div id="helper">
         <a href="javascript:void(0)" id="expandButton" onclick="expand_helper()">↕️</a>
-        <a href="#">📚 Quick Glossary</a>
-        <a href="#">▶ Videos</a>
+        <a href="javascript:void(0)" id="quickGlossaryButton" onclick="expand_helper(); show_glossary();">📚 Quick Glossary</a>
+        <a href="javascript:void(0)" id="videoButton" onclick="expand_helper()">▶ Videos</a>
     </div>
     
 </body>

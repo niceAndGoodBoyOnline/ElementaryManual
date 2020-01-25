@@ -65,9 +65,9 @@ function contract_helper(){
 function makeGlossary(){
     glossary = {
         shell: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
-        terminal: shell,
-        CMD: shell,
-        bash: shell,
+        terminal: glossary['shell'],
+        CMD: glossary['shell'],
+        bash: glossary['shell'],
         sudo: 'Prompts you for a password to execute administravtive (protected) tasks. Means "Substitue User DO" or "Super User DO".',
         distro: 'A specific version of Linux, which contains specific software. Similar to how Windows has home, professional, education versions.',
         X: 'The name of the GUI in Linux. Icons, windows, wallpaper etc. Also known as X11 and X-windows',
@@ -77,5 +77,22 @@ function makeGlossary(){
         binaries: 'Compiled code that "just runs" on Linux. All .exe files in windows are binaries.',
         apt: 'The shell command to get, install, update and upgrade software. Very power and simple tool.',
         kernel: 'The very core of a computer system. The bridge between hardware and Linux.',
+        bootable: 'A disk or other medium from which the system can be booted. Contains the OS.',
+        highlighted: 'This is where the definition would show up.',
     }
 }
+
+function show_highligthed_definitions(){
+    makeGlossary()
+    let terms = document.getElementsByTagName('span')
+    for (let i=0; i < terms.length; i++) {
+        terms[i].title = glossary[terms[i].innerHTML.toLowerCase()]
+        let highlight = document.createElement('mark')
+        let term = terms[i].innerHTML
+        terms[i].innerHTML = ""
+        highlight.innerHTML = term
+        terms[i].appendChild(highlight)
+    }
+}
+
+show_highligthed_definitions()
