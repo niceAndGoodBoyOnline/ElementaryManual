@@ -1,47 +1,19 @@
 document.getElementById('navButton').addEventListener("click", toggleSideNav);
+let sideNav = document.getElementById("sideNav");
+let navButton = document.getElementById('navButton');
 
 let containerStyle = document.getElementById('container').style;
 let glossary = {}
 
-sideNavState = false;
-quickGlossaryState = false;
+let sideNavState = false;
 
 function toggleSideNav(){
-    let sideNav = document.getElementById("sideNav");
-    let navButton = document.getElementById('navButton');
 
-    if (sideNavState == true){
-        sideNavState = false;
-        sideNav.style.width = "0";
-
-        if(window.innerHeight > window.innerWidth){
-            containerStyle.marginLeft = "8vh";
-            navButton.style.left = '-10vh'
-            navButton.style.fontSize = '15vh'
-        }
-        else{
-            navButton.style.fontSize = '10vw'
-            navButton.style.left = '-7vw'
-            containerStyle.marginLeft = "7vw";
-        }
+    if(window.innerHeight > window.innerWidth){
+        set_portrait_css()
     }
-
     else{
-        sideNavState = true;
-
-        if(window.innerHeight > window.innerWidth){
-            sideNav.style.width = '30vh';
-            containerStyle.marginLeft = "30vh";
-            sideNav.style.fontSize = '3.5vw'
-            navButton.style.left = '2vw'
-        }
-
-        else{
-            sideNav.style.width = '20vw';
-            navButton.style.left = '3vw'
-            containerStyle.marginLeft = "20vw";
-        }
-        
+        set_landscape_css()
     }
 }
 
@@ -62,6 +34,57 @@ function contract_helper(){
     helper.style.height = '4vh'
     expandButton.onclick = function() {expand_helper()}
 }
+
+function set_portrait_css(){
+    if (sideNavState == true){
+        sideNavState = false;
+        sideNav.style.width = '0';
+        containerStyle.marginLeft = "8vh";
+        navButton.style.left = '-10vh';
+        navButton.style.fontSize = '14vh';
+    }
+    else{
+        sideNavState = true;
+        sideNav.style.width = '30vh';
+        containerStyle.marginLeft = "30vh";
+        sideNav.style.fontSize = '2vh'
+        navButton.style.left = '5vh'
+    }
+}
+
+
+function set_landscape_css(){
+    if (sideNavState == true){
+        sideNavState = false;
+        sideNav.style.width = "0";
+        navButton.style.fontSize = '14vh'
+        navButton.style.left = '-10vh'
+        containerStyle.marginLeft = "7vw";
+    }
+    else{
+        sideNavState = true;
+        sideNav.style.width = '33vw';
+        sideNav.style.fontSize = "3vh"
+        navButton.style.left = '13vw'
+        containerStyle.marginLeft = "33vw";
+    }
+}
+
+function onOrientationChange() {
+    switch(window.orientation) {  
+      case -90: case 90:
+        sideNavState = true
+        set_landscape_css()
+        break; 
+      default:
+        sideNavState = true
+        set_portrait_css()
+        break; 
+    }
+}
+  
+window.addEventListener('orientationchange', onOrientationChange);
+
 
 function makeGlossary(){
     glossary = {
