@@ -131,6 +131,10 @@ hr{
     top: -.5vh;
     font-Size: 5vh;
   }
+
+  .screenshots{
+    width: 50%;
+  }
   
 }
 
@@ -174,6 +178,10 @@ hr{
   #expandButton{
     top: -.5vh;
     font-Size: 5vh;
+  }
+
+  .screenshots{
+    width: 100%;
   }
   
 }
