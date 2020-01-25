@@ -4,6 +4,7 @@ let containerStyle = document.getElementById('container').style;
 let glossary = {}
 
 sideNavState = false;
+quickGlossaryState = false;
 
 function toggleSideNav(){
     let sideNav = document.getElementById("sideNav");
@@ -93,6 +94,23 @@ function show_highligthed_definitions(){
         highlight.innerHTML = term
         terms[i].appendChild(highlight)
     }
+}
+
+function show_quick_glossary() {
+    if (quickGlossaryState == false) {
+        makeGlossary()
+        let helper = document.getElementById('helper')
+        let glossaryList = document.createElement('ol')
+        let terms = document.getElementsByTagName('span')
+        for (let i=0; i < terms.length; i++) {
+            let glossaryItem = document.createElement('li')
+            glossaryItem.innerHTML = terms[i].innerHTML.toLowerCase() + ' -> ' + terms[i].title 
+            glossaryList.appendChild(glossaryItem)
+            glossaryList.appendChild(document.createElement('br'))
+        }
+        helper.appendChild(glossaryList)
+    }
+    quickGlossaryState = true;
 }
 
 show_highligthed_definitions()
