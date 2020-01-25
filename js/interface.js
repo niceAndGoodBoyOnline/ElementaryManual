@@ -6,6 +6,7 @@ let containerStyle = document.getElementById('container').style;
 let glossary = {}
 
 let sideNavState = false;
+let quickGlossaryState == false;
 
 function toggleSideNav(){
 
