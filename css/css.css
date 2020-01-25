@@ -1,8 +1,12 @@
 body{
   font-family: monospace;
-  background: linear-gradient(#4A9BE2,#A4CDF0,#ACD1F1, #FFF,#FFF) fixed;
+  background: linear-gradient(#4A9BE2,#A4CDF0,#ACD1F1) fixed;
 }
 
+hr{ 
+  margin: 0vh;
+  padding: 0vh;
+}
 
 .leftLink{
   text-align: left;
@@ -27,7 +31,6 @@ body{
 #navButton{
   position: fixed;
   text-decoration: none;
-  font-size: 15vh;
   float: left;
   left: -10vh;
   z-index: 2;
@@ -87,7 +90,6 @@ body{
 }
 
 
-
 @media screen and (orientation: landscape){
   
   #container{
@@ -99,7 +101,7 @@ body{
   
     
   #navButton{
-    font-size: 15vh;
+    font-size: 14vh;
     left: -10vh;
   }
   
@@ -112,7 +114,7 @@ body{
   }
   
   #sideNav a {
-    padding: .2vw 0vh 3vw 1vw;
+    padding: .2vw 0vh 2vh 1vw;
   }
 
   #helper{
@@ -128,10 +130,6 @@ body{
   #expandButton{
     top: -.5vh;
     font-Size: 5vh;
-  }
-
-  .screenshots{
-    width: 50%;
   }
   
 }
@@ -147,7 +145,7 @@ body{
   
     
   #navButton{
-    font-size: 15vh;
+    font-size: 14vh;
     left: -10vh;
   }
   
@@ -176,10 +174,6 @@ body{
   #expandButton{
     top: -.5vh;
     font-Size: 5vh;
-  }
-
-  .screenshots{
-    width: 100%;
   }
   
 }

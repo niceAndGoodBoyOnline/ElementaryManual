@@ -10,6 +10,7 @@ body{
   
   #coverContainer{
     text-align: center;
+    padding-left: 2vw;
   }
   
   .coverLinks {
@@ -21,11 +22,15 @@ body{
   
   .coverLinks a{
     display: block;
+    font-size: 2.7vh;
+    padding-left: 4vw;
+    padding-bottom: 0;
   }
   
   #cover img{
     position:relative;
-    float: right;
+    height: 30%;
+    width: auto;
   }
   
   .leftLink{
@@ -46,37 +51,43 @@ body{
   
   .coverLinks {
     left: 12vw;
-    font-size: 2vh;
   }
   
   .coverLinks a{
-    padding: .2vh 0 .2vh;
+    padding: .1vh 0 .1vh;
+    padding-bottom: 0;
   }
   
   #cover img{
     width: auto;
-    height: 20%;
+    height: 30%;
   }
 }
 
 @media screen and (orientation: landscape){
 
-  #cover{
-    font-size: 10vh;
+  .topHeader{
+    padding-top: 2vh;
   }
 
   #cover img{
     right: 10vw;
-    width: auto;
-    height: 50%;
+    width: 30%;
+    
+    float: right;
+    height: auto;
   }
   
   .coverLinks {
     left: 6vw;
     font-size: 3vh;
   }
-  
-  .coverLinks a{
-    padding: .2vh 0 .2vh;
+
+  .coverLinks {
+    left: 6vw;
+    font-size: 3vh;
+    padding-bottom: 0;
   }
+  
+
 }
