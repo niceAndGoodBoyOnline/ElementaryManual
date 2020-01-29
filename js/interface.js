@@ -1,13 +1,15 @@
-document.getElementById('navButton').addEventListener("click", toggleSideNav);
+let helper = document.getElementById('helper')
+let helperToggle = document.getElementById('helperToggle')
 let sideNav = document.getElementById("sideNav");
 let navButton = document.getElementById('navButton');
-
 let containerStyle = document.getElementById('container').style;
+
 let glossary = {}
 
+navButton.addEventListener("click", toggleSideNav);
+helperToggle.addEventListener("click", toggleHelper);
 let sideNavState = false;
-let quickGlossaryState = false;
-let videoTabState = false;
+let helperState = false;
 
 function toggleSideNav(){
 
@@ -19,22 +21,46 @@ function toggleSideNav(){
     }
 }
 
-function expand_helper(){
-    let helper = document.getElementById('helper')
-    let expandButton = document.getElementById('expandButton')
+function toggleHelper(){
     
-    containerStyle.magrin = "0 0 45vh 0"
-    helper.style.height = '66vh'
-    expandButton.onclick = function() {contract_helper()}
+    if(window.innerHeight > window.innerWidth){
+        set_portrait_helper()
+    }
+    else{
+        set_landscape_helper()
+    }
 }
 
-function contract_helper(){
-    let helper = document.getElementById('helper')
-    let expandButton = document.getElementById('expandButton')
+function set_portrait_helper(){
 
-    containerStyle.magrin = "0 0 0 0"
-    helper.style.height = '4vh'
-    expandButton.onclick = function() {expand_helper()}
+    if (helperState==true){
+        helperState=false;
+        containerStyle.magrin = "0 0 0 0"
+        helper.style.height = '4vh'
+        helper.style.width = '10vw'
+    }
+    else{
+        helperState=true;
+        containerStyle.magrin = "0 0 45vh 0"
+        helper.style.height = '66vh'
+        helper.style.width = "100%"
+    }
+}
+
+function set_landscape_helper(){
+
+    if (helperState==true){
+        helperState=false;
+        containerStyle.magrin = "0 0 0 0"
+        helper.style.height = '4vh'
+        helper.style.width = '3vw'
+    }
+    else{
+        helperState=true;
+        containerStyle.magrin = "0 0 45vh 0"
+        helper.style.height = '66vh'
+        helper.style.width = "100%"
+    }
 }
 
 function set_portrait_css(){
@@ -104,7 +130,7 @@ function makeGlossary(){
         apt: 'The shell command to get, install, update and upgrade software. Very power and simple tool.',
         kernel: 'The very core of a computer system. The bridge between hardware and Linux.',
         bootable: 'A disk or other medium from which the system can be booted. Contains the OS.',
-        highlighted: 'This is where the definition would show up.'
+        highlighted: 'This is where the definition would show up.',
     }
 }
 
@@ -114,7 +140,7 @@ function show_highlighted_definitions(){
     for (let i=0; i < terms.length; i++) {
         let term = terms[i].innerHTML
         terms[i].title = glossary[term.toLowerCase()]
-        terms[i].setAttribute("onclick", "show_quick_glossary(); expand_helper();")
+        terms[i].addEventListener("click", toggleHelper)
     }
 }
 
