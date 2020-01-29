@@ -7,6 +7,7 @@ let glossary = {}
 
 let sideNavState = false;
 let quickGlossaryState = false;
+let videoTabState = false;
 
 function toggleSideNav(){
 
@@ -103,20 +104,17 @@ function makeGlossary(){
         apt: 'The shell command to get, install, update and upgrade software. Very power and simple tool.',
         kernel: 'The very core of a computer system. The bridge between hardware and Linux.',
         bootable: 'A disk or other medium from which the system can be booted. Contains the OS.',
-        highlighted: 'This is where the definition would show up.',
+        highlighted: 'This is where the definition would show up.'
     }
 }
 
-function show_highligthed_definitions(){
+function show_highlighted_definitions(){
     makeGlossary()
-    let terms = document.getElementsByTagName('span')
+    let terms = document.getElementsByTagName('mark')
     for (let i=0; i < terms.length; i++) {
-        terms[i].title = glossary[terms[i].innerHTML.toLowerCase()]
-        let highlight = document.createElement('mark')
         let term = terms[i].innerHTML
-        terms[i].innerHTML = ""
-        highlight.innerHTML = term
-        terms[i].appendChild(highlight)
+        terms[i].title = glossary[term.toLowerCase()]
+        terms[i].setAttribute("onclick", "show_quick_glossary(); expand_helper();")
     }
 }
 
@@ -125,16 +123,37 @@ function show_quick_glossary() {
         makeGlossary()
         let helper = document.getElementById('helper')
         let glossaryList = document.createElement('ol')
-        let terms = document.getElementsByTagName('span')
+        glossaryList.id = "glossaryList"
+        let terms = document.getElementsByTagName('mark')
         for (let i=0; i < terms.length; i++) {
             let glossaryItem = document.createElement('li')
-            glossaryItem.innerHTML = terms[i].innerHTML.toLowerCase() + ' -> ' + terms[i].title 
+            glossaryItem.innerHTML = "<mark>" + terms[i].innerHTML.toLowerCase() + "</mark>" + ' -> ' + terms[i].title 
             glossaryList.appendChild(glossaryItem)
             glossaryList.appendChild(document.createElement('br'))
         }
         helper.appendChild(glossaryList)
     }
     quickGlossaryState = true;
+    videoTabState = false;
 }
 
-show_highligthed_definitions()
+function show_video_tab() {
+    if (quickGlossaryState == true) {
+        let helper = document.getElementById('helper')
+        let glossaryList = document.getElementById('glossaryList')
+        helper.removeChild(glossaryList)
+        quickGlossaryState = false;
+    }
+    if (videoTabState == false) {
+        makeGlossary()
+        let helper = document.getElementById('helper')
+        let videoList = document.createElement('ol')
+        for (let i=0; i < terms.length; i++) {
+            let glossaryItem = document.createElement('li')
+        }
+        helper.appendChild(glossaryList)
+        videoTabState = true;
+    }
+}
+
+show_highlighted_definitions()
