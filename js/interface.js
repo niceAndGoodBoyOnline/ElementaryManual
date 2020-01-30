@@ -150,31 +150,10 @@ function show_highlighted_definitions(){
     }
     let vids = document.getElementsByClassName("icon")
     for (let i=0; i < vids.length; i++){
-
-        
-    }
-}
-
-function show_quick_glossary(word) {
-    makeGlossary()
-}
-
-function show_video_tab() {
-    if (quickGlossaryState == true) {
-        let helper = document.getElementById('helper')
-        let glossaryList = document.getElementById('glossaryList')
-        helper.removeChild(glossaryList)
-        quickGlossaryState = false;
-    }
-    if (videoTabState == false) {
-        makeGlossary()
-        let helper = document.getElementById('helper')
-        let videoList = document.createElement('ol')
-        for (let i=0; i < terms.length; i++) {
-            let glossaryItem = document.createElement('li')
-        }
-        helper.appendChild(glossaryList)
-        videoTabState = true;
+        vids[i].addEventListener("click", toggleHelper)
+        vids[i].addEventListener("click", function () {
+            helperContent.innerHTML = '<video autoplay muted loop>' + '<source src="../video/' + vids[i].id + '.mp4" type="video/mp4" id="' + vids[i].id + '">' + '</source>' + '</video>'
+        })
     }
 }
 
