@@ -19,6 +19,7 @@ function toggleSideNav(){
     else{
         set_landscape_css()
     }
+
 }
 
 function toggleHelper(){
@@ -29,6 +30,7 @@ function toggleHelper(){
     else{
         set_landscape_helper()
     }
+
 }
 
 function set_portrait_helper(){
@@ -36,14 +38,12 @@ function set_portrait_helper(){
     if (helperState==true){
         helperState=false;
         containerStyle.magrin = "0 0 0 0"
-        helper.style.height = '4vh'
-        helper.style.width = '10vw'
+        helper.style.height = '5.5vh'
     }
     else{
         helperState=true;
         containerStyle.magrin = "0 0 45vh 0"
         helper.style.height = '66vh'
-        helper.style.width = "100%"
     }
 }
 
@@ -52,14 +52,12 @@ function set_landscape_helper(){
     if (helperState==true){
         helperState=false;
         containerStyle.magrin = "0 0 0 0"
-        helper.style.height = '4vh'
-        helper.style.width = '3vw'
+        helper.style.height = '9vh'
     }
     else{
         helperState=true;
         containerStyle.magrin = "0 0 45vh 0"
-        helper.style.height = '66vh'
-        helper.style.width = "100%"
+        helper.style.height = '90%'
     }
 }
 
@@ -67,14 +65,14 @@ function set_portrait_css(){
     if (sideNavState == true){
         sideNavState = false;
         sideNav.style.width = '0';
-        containerStyle.marginLeft = "8vh";
+        containerStyle.left = "8vh";
         navButton.style.left = '-10vh';
         navButton.style.fontSize = '14vh';
     }
     else{
         sideNavState = true;
         sideNav.style.width = '30vh';
-        containerStyle.marginLeft = "30vh";
+        containerStyle.left = "30vh";
         sideNav.style.fontSize = '2vh'
         navButton.style.left = '5vh'
     }
@@ -87,26 +85,28 @@ function set_landscape_css(){
         sideNav.style.width = "0";
         navButton.style.fontSize = '14vh'
         navButton.style.left = '-10vh'
-        containerStyle.marginLeft = "7vw";
+        containerStyle.left = "7vw";
     }
     else{
         sideNavState = true;
         sideNav.style.width = '33vw';
         sideNav.style.fontSize = "3vh"
         navButton.style.left = '13vw'
-        containerStyle.marginLeft = "33vw";
+        containerStyle.left = "33vw";
     }
 }
 
 function onOrientationChange() {
+    sideNavState = true
+    helperState = true
     switch(window.orientation) {  
       case -90: case 90:
-        sideNavState = true
         set_landscape_css()
+        set_landscape_helper()
         break; 
       default:
-        sideNavState = true
         set_portrait_css()
+        set_portrait_helper()
         break; 
     }
 }
@@ -141,6 +141,11 @@ function show_highlighted_definitions(){
         let term = terms[i].innerHTML
         terms[i].title = glossary[term.toLowerCase()]
         terms[i].addEventListener("click", toggleHelper)
+    }
+    let vids = document.getElementsByClassName("icon")
+    for (let i=0; i < vids.length; i++){
+
+        
     }
 }
 
