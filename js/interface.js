@@ -117,9 +117,9 @@ window.addEventListener('orientationchange', onOrientationChange);
 function makeGlossary(){
     glossary = {
         shell: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
-        terminal: glossary['shell'],
-        CMD: glossary['shell'],
-        bash: glossary['shell'],
+        terminal: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
+        CMD: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
+        bash: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
         sudo: 'Prompts you for a password to execute administravtive (protected) tasks. Means "Substitue User DO" or "Super User DO".',
         distro: 'A specific version of Linux, which contains specific software. Similar to how Windows has home, professional, education versions.',
         X: 'The name of the GUI in Linux. Icons, windows, wallpaper etc. Also known as X11 and X-windows',
@@ -131,6 +131,8 @@ function makeGlossary(){
         kernel: 'The very core of a computer system. The bridge between hardware and Linux.',
         bootable: 'A disk or other medium from which the system can be booted. Contains the OS.',
         highlighted: 'This is where the definition would show up.',
+        gui: 'a human-computer interface (i.e., a way for humans to interact with computers) that uses windows, icons and menus',
+        console: "A command-line interpreter that provides you an interface to execute commands without a GUI."
     }
 }
 
@@ -145,22 +147,18 @@ function show_highlighted_definitions(){
 }
 
 function show_quick_glossary() {
-    if (quickGlossaryState == false) {
-        makeGlossary()
-        let helper = document.getElementById('helper')
-        let glossaryList = document.createElement('ol')
-        glossaryList.id = "glossaryList"
-        let terms = document.getElementsByTagName('mark')
-        for (let i=0; i < terms.length; i++) {
-            let glossaryItem = document.createElement('li')
-            glossaryItem.innerHTML = "<mark>" + terms[i].innerHTML.toLowerCase() + "</mark>" + ' -> ' + terms[i].title 
-            glossaryList.appendChild(glossaryItem)
-            glossaryList.appendChild(document.createElement('br'))
-        }
-        helper.appendChild(glossaryList)
+    makeGlossary()
+    let helper = document.getElementById('helper')
+    let glossaryList = document.createElement('ol')
+    glossaryList.id = "glossaryList"
+    let terms = document.getElementsByTagName('mark')
+    for (let i=0; i < terms.length; i++) {
+        let glossaryItem = document.createElement('li')
+        glossaryItem.innerHTML = "<mark>" + terms[i].innerHTML.toLowerCase() + "</mark>" + ' -> ' + terms[i].title 
+        glossaryList.appendChild(glossaryItem)
+        glossaryList.appendChild(document.createElement('br'))
     }
-    quickGlossaryState = true;
-    videoTabState = false;
+    helper.appendChild(glossaryList)
 }
 
 function show_video_tab() {
@@ -183,3 +181,4 @@ function show_video_tab() {
 }
 
 show_highlighted_definitions()
+show_quick_glossary()
