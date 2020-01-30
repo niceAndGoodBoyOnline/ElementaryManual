@@ -168,7 +168,12 @@ function show_highlighted_definitions(){
     }
     let vids = document.getElementsByClassName("icon")
     for (let i=0; i < vids.length; i++){
-
+        vids[i].addEventListener("click", toggleHelper)
+        vids[i].addEventListener("click", function () {
+            helperContent.innerHTML = '<video autoplay loop>' + '<source src="../video/' 
+            + vids[i].id + '.m4v" type="video/mp4" id="' 
+            + vids[i].id + '">' + '</source>' + '</video>'
+        })
         
     }
 }
@@ -186,4 +191,3 @@ function make_glossary_page() {
 }
 
 show_highlighted_definitions()
-make_glossary_page()
