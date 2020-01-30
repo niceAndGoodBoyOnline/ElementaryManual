@@ -122,6 +122,11 @@ hr{
     margin: 0 0 0 1vw;
   }
 
+  .screenshots {
+    width: 65%;
+    padding-left: 10%;
+  }
+
 }
 
 @media only screen and (orientation: portrait) {
@@ -160,6 +165,11 @@ hr{
   #helper a{
     font-size: 3vh;
     margin: 0 0 0 3vw;
+  }
+
+  .screenshots {
+    width: 100%;
+    padding-left: 10%;
   }
   
 }
