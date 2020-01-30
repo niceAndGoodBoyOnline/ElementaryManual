@@ -102,9 +102,7 @@ hr{
   font-size: 3vh;
 }
 
-video {
-  width: 60%;
-}
+
 
 
 
@@ -158,6 +156,10 @@ video {
     width: 50%;
   }
 
+  video {
+    width: 60%;
+  }
+
 }
 
 @media only screen and (orientation: portrait) {
@@ -208,6 +210,10 @@ video {
   #content .screenshots {
     width: 100%;
     padding-left: 5%;
+  }
+
+  video {
+    width: 100%;
   }
   
 }

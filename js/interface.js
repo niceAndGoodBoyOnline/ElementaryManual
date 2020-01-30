@@ -157,4 +157,17 @@ function show_highlighted_definitions(){
     }
 }
 
+function make_glossary_page() {
+    makeGlossary()
+    let GlossaryList =  document.getElementById("Glossary")
+    for (let term in glossary) {
+        let listItem = document.createElement("li")
+        listItem.innerHTML = term + ' -> ' + glossary[term]
+        GlossaryList.appendChild(listItem)
+        let breakLine = document.createElement("br")
+        GlossaryList.appendChild(breakLine)
+    }
+}
+
 show_highlighted_definitions()
+make_glossary_page()
