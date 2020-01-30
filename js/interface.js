@@ -152,7 +152,7 @@ function show_highlighted_definitions(){
     for (let i=0; i < vids.length; i++){
         vids[i].addEventListener("click", toggleHelper)
         vids[i].addEventListener("click", function () {
-            helperContent.innerHTML = '<video autoplay muted loop>' + '<source src="../video/' + vids[i].id + '.mp4" type="video/mp4" id="' + vids[i].id + '">' + '</source>' + '</video>'
+            helperContent.innerHTML = '<video autoplay muted loop>' + '<source src="../video/' + vids[i].id + '.m4v" type="video/mp4" id="' + vids[i].id + '">' + '</source>' + '</video>'
         })
     }
 }
