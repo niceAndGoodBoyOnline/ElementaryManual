@@ -98,6 +98,11 @@ hr{
   color: #111;
 }
 
+#helperContent{
+  font-size: 3vh;
+}
+
+
 
 
 @media screen and (orientation: landscape){
@@ -145,9 +150,9 @@ hr{
     margin: 0 0 0 1vw;
   }
 
-  .screenshots {
+  #content .screenshots {
     width: 65%;
-    padding-left: 10%;
+    padding-left: 5%;
   }
 
 }
@@ -197,9 +202,9 @@ hr{
     margin: 0 0 0 3vw;
   }
 
-  .screenshots {
+  #content .screenshots {
     width: 100%;
-    padding-left: 10%;
+    padding-left: 5%;
   }
   
 }
