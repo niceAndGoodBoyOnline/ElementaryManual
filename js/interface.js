@@ -144,7 +144,9 @@ function show_highlighted_definitions(){
         let term = terms[i].innerHTML
         terms[i].title = glossary[term.toLowerCase()]
         terms[i].addEventListener("click", toggleHelper)
-        terms[i].addEventListener("click", function () {show_quick_glossary(terms[i].innerHTML)})
+        terms[i].addEventListener("click", function () {
+            helperContent.innerHTML = '<mark>' + term + '</mark>' + ' -> ' + glossary[term.toLowerCase()]
+        })
     }
     let vids = document.getElementsByClassName("icon")
     for (let i=0; i < vids.length; i++){
@@ -155,7 +157,6 @@ function show_highlighted_definitions(){
 
 function show_quick_glossary(word) {
     makeGlossary()
-    helperContent.innerHTML = '<mark>' + word + '</mark>' + ' -> ' + glossary[word.toLowerCase()] 
 }
 
 function show_video_tab() {
