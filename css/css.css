@@ -1,12 +1,14 @@
 body{
   font-family: monospace;
   background: linear-gradient(#4A9BE2,#A4CDF0,#ACD1F1) fixed;
+  overflow:hidden;
 }
 
 hr{ 
   margin: 0vh;
   padding: 0vh;
 }
+
 
 .leftLink{
   text-align: left;
@@ -22,11 +24,25 @@ hr{
   position: absolute; 
   float: left;
   border-left: .25vh solid black; 
-  margin-left: 8vh;
-  padding: 0 2vh 0 4vh;
+  left: 8vh;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
+#content{
+  height: 92%;
+  overflow-y: scroll;
+  box-sizing: content-box;  
+  margin-bottom: 25vh;
+  padding-right: 10vw;
+}
+
+#content img{
+  width: 95%;
+  left: -15vw;
+  height: auto;
+}
   
 #navButton{
   position: fixed;
@@ -63,8 +79,8 @@ hr{
 }
   
 #helper{
-  width: 10vw;
-  height: 4vh;
+  width: 100vw;
+  height: 6vh;
   position: fixed;
   bottom: 0;
   right: 0;
@@ -72,7 +88,7 @@ hr{
   background-color: rgba(180,180,180,.97); 
   overflow: hidden;
   display: block;
-  z-index: 1;
+  z-index: 3;
   transition: 0.5s;
 }
 
@@ -87,12 +103,20 @@ hr{
 @media screen and (orientation: landscape){
   
   #container{
-    margin-left: 8vh;
-    padding: 0 2vh 0 2vh;
+    left: 8vh;
+    padding: 0 2vh 2vh;
     font-family: monospace;
     height: 100%;
+    overflow-x: hidden;
   }
-  
+
+  #content{
+    width: 93vw;
+  }
+
+  .icon{
+    font-size: 10vh;
+  }  
     
   #navButton{
     font-size: 14vh;
@@ -112,13 +136,12 @@ hr{
   }
 
   #helper{
-    width: 3vw;
-    height: 4vh;
+    height: 9vh;
     padding-top: .5vh;
   }
   
   #helper a{
-    font-size: 3vh;
+    font-size: 6.3vh;
     margin: 0 0 0 1vw;
   }
 
@@ -132,13 +155,21 @@ hr{
 @media only screen and (orientation: portrait) {
   
   #container{
-    margin-left: 8vh;
-    padding: 0 2vh 0 2vh;
+    left: 8vh;
+    padding: 0 2vh 2vh;
     font-family: monospace;
     height: 100%;
+    overflow-x: hidden;
   }
-  
-    
+
+  #content{
+    width: 78%;
+  }
+
+  .icon{
+    font-size: 4vh;
+  }
+
   #navButton{
     font-size: 14vh;
     left: -10vh;
@@ -157,13 +188,12 @@ hr{
   }
 
   #helper{
-    width: 10vw;
-    height: 4vh;
+    height: 5.5vh;
     padding-top: .5vh;
   }
   
   #helper a{
-    font-size: 3vh;
+    font-size: 4vh;
     margin: 0 0 0 3vw;
   }
 
