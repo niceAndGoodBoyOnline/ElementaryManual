@@ -117,13 +117,13 @@ window.addEventListener('orientationchange', onOrientationChange);
 
 function makeGlossary(){
     glossary = {
-        shell: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
-        terminal: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
-        CMD: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
-        bash: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
+        shell: "A command-line interface that provides you an interface to execute commands without a GUI.",
+        terminal: "A command-line interface that provides you an interface to execute commands without a GUI.",
+        hig: "A command-line interface that provides you an interface to execute commands without a GUI.",
+        bash: "A command-line interface that provides you an interface to execute commands without a GUI.",
         sudo: 'Prompts you for a password to execute administravtive (protected) tasks. Means "Substitue User DO" or "Super User DO".',
         distro: 'A specific version of Linux, which contains specific software. Similar to how Windows has home, professional, education versions.',
-        X: 'The name of the GUI in Linux. Icons, windows, wallpaper etc. Also known as X11 and X-windows',
+        x: 'The name of the GUI in Linux. Icons, windows, wallpaper etc. Also known as X11 and X-windows',
         root: 'The start of a Linux file system. Always located at "/".',
         rootUser: 'The System Administrator account. Has permission to do anything in the system.',
         compile: 'Turn source code into an application. Also refered to as "build".',
@@ -133,7 +133,25 @@ function makeGlossary(){
         bootable: 'A disk or other medium from which the system can be booted. Contains the OS.',
         highlighted: 'This is where the definition would show up.',
         gui: 'a human-computer interface (i.e., a way for humans to interact with computers) that uses windows, icons and menus',
-        console: "A command-line interpreter that provides you an interface to execute commands without a GUI."
+        console: "A command-line interpreter that provides you an interface to execute commands without a GUI.",
+        hig: 'Human interface guidelines. This is essentially the GUI style guide that elementary OS uses.',
+        plank: 'The Plank is a display of which user applications are running. Similar to the taskbar in Windows or Dock in macOS.',
+        superkey: 'Keyboard key that is associated with special elementary OS commands. Similar to the Windows key for Windows or the Apple/Command key in macOS.',
+        focus: 'Focus refers to which application in elementary OS that key presses will be sent to. Only one application can have focus.',
+        shortcuts: 'Combinations of keys on a keyboard, usually involving Alt, Shift, Ctrl, and Super.',
+        curatedapplications: 'Applications which meet the elementary OS HIG and are specifically designed for elementary OS.',
+        userpassword: 'The password you created when installing elementary OS.',
+        authentication: 'The process of verifying your identity. Your user password should be kept a secret for this reason.',
+        applicationdrawer: 'Where elementary OS keeps all installed applications for easy access. Similar to the Start menu in Windows.',
+        update: 'Small changes to applications. Usually bug fixes, security patches or minor improvements.',
+        linux: 'A Free and Open Source kernel. Allows many different operating systems to exist, like elementary OS.',
+        ubuntu: 'A distribution of the Linux kernel which is well known and popular. elementary OS is based on Ubuntu 18.04.',
+        foss: 'Free Open Source Software. "Free as in speech, not as in beer!"',
+        updates: 'Small changes to applications. Usually bug fixes, security patches or minor improvements.',
+        bootmenukey: 'Usually a F key, like F2 or F10. There is no standard bootmenu key. The bootmenu key is displayed when you turn your computer on, before an OS is loaded.',
+        os: "Operating System. Handles communication with all the computers low level hardware through a kernel.",
+        sourcepackages: 'Code which is packaged and ready to be installed on a Linux computer.',
+        aptrepository: 'An online database of software that can be installed on a Linux computer'
     }
 }
 
@@ -142,19 +160,24 @@ function show_highlighted_definitions(){
     let terms = document.getElementsByTagName('mark')
     for (let i=0; i < terms.length; i++) {
         let term = terms[i].innerHTML
-        terms[i].title = glossary[term.toLowerCase()]
+        terms[i].title = glossary[term.toLowerCase().replace(" ","")]
         terms[i].addEventListener("click", toggleHelper)
         terms[i].addEventListener("click", function () {
-            helperContent.innerHTML = '<mark>' + term + '</mark>' + ' -> ' + glossary[term.toLowerCase()]
+            helperContent.innerHTML = '<mark>' + term + '</mark>' + ' -> ' + glossary[term.toLowerCase().replace(" ","")]
         })
     }
     let vids = document.getElementsByClassName("icon")
     for (let i=0; i < vids.length; i++){
-        vids[i].addEventListener("click", toggleHelper)
-        vids[i].addEventListener("click", function () {
-            helperContent.innerHTML = '<video autoplay muted loop>' + '<source src="../video/' + vids[i].id + '.m4v" type="video/mp4" id="' + vids[i].id + '">' + '</source>' + '</video>'
-        })
+
+        
     }
 }
+
+vids[i].addEventListener("click", toggleHelper)
+        vids[i].addEventListener("click", function () {
+            helperContent.innerHTML = '<video autoplay loop>' + '<source src="../video/' 
+            + vids[i].id + '.m4a" type="video/mp4" id="' 
+            + vids[i].id + '">' + '</source>' + '</video>'
+        })
 
 show_highlighted_definitions()

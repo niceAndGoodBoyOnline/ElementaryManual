@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
+    <title>How to Make a Bootable USB</title>
+</head>
+<body>
+    <a href="javascript:void(0)" id="navButton">🧭</a>
+    
+    <div id='container'>
+        <div id='content'>
+        <div><h1>How to Make a <mark>Bootable</mark> USB drive</h1></div>
+        <br>
+        <div>
+
+            <h2>Downloading Rufus:</h2>
+
+            <ol>
+                <li>Go to the <a href="https://rufus.ie/">Rufus</a> website.</li><br>
+                <li>Scroll down to the "Downloads" section, and select the latest version of Rufus (Rufus 3.8 as of Jan 23, 2020)<br><br>
+                    <img src="../img/rufus_download_section.png" alt="rufusDownloadSection" class="screenshots">
+                </li>
+            </ol>
+
+            <h2>Downloading elementary OS:</h2>
+
+            <ol>
+                <li>Go to the <a href="https://elementary.io/">elementary OS</a> website.</li><br>
+                <img src="../img/elementary_download.png" alt="elementaryOSDownloadSection" class="screenshots"><br><br>
+                <li>Select the amount you want to pay for elementary OS.</li><br>
+                NOTE: You can click <strong>Custom</strong> and type "0" in case you don't want to pay.<br><br>
+                <li>Click on the <strong>Purchase elementary OS</strong> or <strong>Download</strong> button.</li><br>
+            </ol>
+
+            <h2>Formatting the USB drive:</h2>
+
+            <ol>
+                <li>Double click the rufus.exe file that we downloaded in step 1.(It should be in your Downloads folder.)</li><br>
+                <li>Select the USB that you want to use under the device drop-down menu.</li><br>
+                <img src="../img/rufus_device_selector.png" alt="rufusDeviceSelector" class="screenshots"><br><br>
+                <li>Click the <strong>Select</strong> button.</li><br>
+                <img src="../img/rufus_ISO_selector.png" alt="rufusISOSelector" class="screenshots"><br><br>
+                <li>Browse through your files to find the elementary OS ISO that we downloaded earlier. (This should also be in your Downloads folder.)</li><br>
+                <img src="../img/ISO_selector_dialog_box.png" alt="ISOSelectorDialogBox" class="screenshots"><br>
+                <li>Click <strong>Start</strong>.</li><br>
+                <img src="../img/rufus_start.png" alt="rufusStart" class="screenshots"><br><br>
+                <li>If any of the following dialog boxes show up, click on the respective buttons marked by the red arrow.</li><br>
+                <img src="../img/rufus_warning.png" alt="rufusWarning" class="screenshots"><br>
+                <li>A green 'Ready' bar indicates the process has been completed.</li><br>
+                <img src="../img/rufus_ready.png" alt="rufusReady" class="screenshots"><br>
+            </ol>
+        
+            <h3><em>Congratulations! You have successfully created a bootable USB drive!</em></h3><br>
+        </div>
+    </div>  
+      
+
+
+    <div id="sideNav">
+        <a href="../html/user_guide.html">How to Use This Document</a>
+        <a href="../html/installation.html">Install elementary OS</a>
+        <a href="../html/elementaryOS.html">Get to Know elementary OS</a>
+        <a href="../html/app_centre.html">How to Use AppCentre</a>  
+        <a href="../html/terminal.html">How to Use Terminal</a>  
+        <a href="../html/super_key_shortcuts.html">Super Key Shortcuts</a>
+        <a href="../html/system_custom.html">Customize Your elementary OS System</a>
+        <a href="../html/troubleshoot.html">Troubleshooting Linux</a>
+        <a href="../html/glossary.html">Glossary of Terms</a>
+    </div>
+
+    <br>
+
+
+    <div id="helper">
+        <a id="helperToggle" href="javascript:void(0)">📚 Helper</a>
+        <br><br>
+        <div id="helperContent"></div>       
+    </div>
+    
+</body>
+<script src="../js/interface.js"></script>
+</html>
