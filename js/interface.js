@@ -148,10 +148,11 @@ function makeGlossary(){
         ubuntu: 'A distribution of the Linux kernel which is well known and popular. elementary OS is based on Ubuntu 18.04.',
         foss: 'Free Open Source Software. "Free as in speech, not as in beer!"',
         updates: 'Small changes to applications. Usually bug fixes, security patches or minor improvements.',
-        bootmenukey: 'Usually a F key, like F2 or F10. There is no standard bootmenu key. The bootmenu key is displayed when you turn your computer on, before an OS is loaded.',
+        bootmenukey: 'Usually an F key, like F2 or F10. There is no standard bootmenu key. The bootmenu key is displayed when you turn your computer on, before an OS is loaded.',
         os: "Operating System. Handles communication with all the computers low level hardware through a kernel.",
         sourcepackages: 'Code which is packaged and ready to be installed on a Linux computer.',
-        aptrepository: 'An online database of software that can be installed on a Linux computer'
+        aptrepository: 'An online database of software that can be installed on a Linux computer',
+        biossetupkey: 'Usually an F key, like F2 or F10. There is no standard bios setup key. The bios setup key is displayed when you turn your computer on, before an OS is loaded.',
     }
 }
 
@@ -174,7 +175,6 @@ function show_highlighted_definitions(){
             + vids[i].id + '.m4v" type="video/mp4" id="' 
             + vids[i].id + '">' + '</source>' + '</video>'
         })
-        
     }
 }
 

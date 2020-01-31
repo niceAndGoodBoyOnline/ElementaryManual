@@ -102,8 +102,12 @@ hr{
   font-size: 3vh;
 }
 
-
-
+video{
+  width: 80%;
+  height: auto;
+  text-align: center;
+  left: 5vw;
+}
 
 
 
@@ -154,10 +158,6 @@ hr{
 
   #content .screenshots {
     width: 50%;
-  }
-
-  video {
-    width: 60%;
   }
 
 }
@@ -212,8 +212,6 @@ hr{
     padding-left: 5%;
   }
 
-  video {
-    width: 100%;
-  }
+
   
 }

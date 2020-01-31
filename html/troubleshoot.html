@@ -14,9 +14,45 @@
         <div><h1>Troubleshooting Linux</h1></div>
 
         <br><br>
-        <div>Troublshooting Linux, and elementary OS, is a topic too large to cover in this manual. Many issues will require research on the part of the user.
-            Since elementary OS is based on Ubuntu 18.04, using your favourite search engine with the keyword "Ubuntu" paired with the issue you are having will
+        <div>Since elementary OS is based on Ubuntu 18.04, using your favourite search engine with the keyword "Ubuntu" paired with the issue you are having will
             return other users solutions.
+
+            <h2>Some common issues that occur while installing and configuring elementary OS:</h2>
+
+            <ul>
+                <li>
+
+                    <h3>If your <mark>bootable</mark> USB Drive doesn't show up in the boot menu:</h3>
+                    <ul>
+                        <li>Try using a different USB port.</li>
+                        <li>You might have to turn on <strong>USB boot</strong>: </li>
+                        <ol><br>
+                            <em>NOTE: Because different computers have their own BIOS Setup Utilities, refer to the bottom of the BIOS screen to look for what a specific key does.</em>
+                            <br><br>
+                            <li>Turn your computer off.</li>
+                            <li>Turn your computer on.</li>
+                            <li>Press the <mark>biossetup key</mark> on your computer's keyboard.</li>
+                            <li>Select the <strong>Boot</strong> tab using the arrow keys on the keyboard.</li>
+                            <li>Move USB to be first in the boot sequence using the key map at the bottom of the screen.</li>
+                            <li>Save the change and exit the BIOS setup.</li>
+                            <li>The computer will restart now using the new settings, booting from the USB drive.</li>
+                        </ol>
+                    </ul>
+                </li>
+                <li>
+                    <h3>If you get an error in the <mark>terminal</mark> due to broken packages:</h3>
+                    <ol>
+                        <li>Open your <mark>terminal</mark>. (<a href="../html/terminal.html">Click here if you don't know how to.</a>)</li>
+                        <li>Type "sudo apt clean".</li>
+                        <li>Type "sudo apt install -f".</li>
+                        <li>Type "sudo dpkg --configure -a".</li>
+                        <li>Type "sudo apt update".</li>
+                    </ol>
+                </li>
+                <li>
+                    <h3></h3>
+                </li>
+            </ul>
         </div>
         
         </div>
